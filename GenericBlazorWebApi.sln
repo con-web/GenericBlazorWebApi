@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericBlazorWebApi.Server", "GenericBlazorWebApi\Server\GenericBlazorWebApi.Server.csproj", "{0B230498-8F0F-4C41-8A58-D93DB6796EA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericBlazorWebApi.Client", "GenericBlazorWebApi\Client\GenericBlazorWebApi.Client.csproj", "{92E78217-E95A-4228-85E7-669637617C70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericBlazorWebApi.Shared", "GenericBlazorWebApi\Shared\GenericBlazorWebApi.Shared.csproj", "{AC3DF8B9-7BA5-4A27-85AD-AB603830AAC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericBlazorWebApi.Tests", "GenericBlazorWebApi\Tests\GenericBlazorWebApi.Tests.csproj", "{07F7B286-3C17-42F8-859C-CC86F2115747}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B230498-8F0F-4C41-8A58-D93DB6796EA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B230498-8F0F-4C41-8A58-D93DB6796EA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B230498-8F0F-4C41-8A58-D93DB6796EA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B230498-8F0F-4C41-8A58-D93DB6796EA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92E78217-E95A-4228-85E7-669637617C70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92E78217-E95A-4228-85E7-669637617C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92E78217-E95A-4228-85E7-669637617C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92E78217-E95A-4228-85E7-669637617C70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC3DF8B9-7BA5-4A27-85AD-AB603830AAC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3DF8B9-7BA5-4A27-85AD-AB603830AAC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3DF8B9-7BA5-4A27-85AD-AB603830AAC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3DF8B9-7BA5-4A27-85AD-AB603830AAC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07F7B286-3C17-42F8-859C-CC86F2115747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07F7B286-3C17-42F8-859C-CC86F2115747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07F7B286-3C17-42F8-859C-CC86F2115747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07F7B286-3C17-42F8-859C-CC86F2115747}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
