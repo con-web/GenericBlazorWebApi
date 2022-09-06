@@ -65,7 +65,7 @@ builder.Services.AddScoped<DbContext, MyDataContext>();
 If you don't want to do that, you can also change the constructor of MyModelService:
 
 ```csharp
-using GenericBlazorWebApi.Server
+using GenericBlazorWebApi.Server;
 
 public class MyModelService : GenericService<MyModel, MyGetDto, MyAddDto, MyUpdateDto>, IMyModelService  
 {  
