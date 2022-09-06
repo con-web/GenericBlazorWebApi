@@ -36,7 +36,7 @@ Following CRUD operations for a specific model are supported:
 #### Get the service going
 
 ```csharp
-using GenericBlazorWebApi.Server
+using GenericBlazorWebApi.Server;
 
 public interface IMyModelService : IGenericService<MyModel, MyGetDto, MyAddDto, MyUpdateDto>  
 {  
@@ -79,7 +79,7 @@ public class MyModelService : GenericService<MyModel, MyGetDto, MyAddDto, MyUpda
 #### Inject the service into the generic controller
 
 ```csharp
-using GenericBlazorWebApi.Server
+using GenericBlazorWebApi.Server;
 
 [ApiController]
 [Route("api")] // optional
@@ -102,7 +102,7 @@ out the available routes).
 #### Get the service going
 
 ```csharp
-using GenericBlazorWebApi.Client
+using GenericBlazorWebApi.Client;
 
 public interface IMyModelService : IGenericService<MyModel, MyGetDto, MyAddDto, MyUpdateDto>  
 {  
@@ -134,7 +134,7 @@ Feel free to implement additional methods in the MyModelController and in the se
 to the IMyModelService interface):
 
 ```csharp
-using GenericBlazorWebApi.Server
+using GenericBlazorWebApi.Server;
 
 [ApiController]
 [Route("api")]
