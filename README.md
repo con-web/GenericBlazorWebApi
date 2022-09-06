@@ -10,6 +10,8 @@ pattern.
 - Microsoft.Asp.NetCore.Mvc.Core >= 2.2.5
 - Microsoft.EntityFrameworkCore >= 6.0.8
 
+See also dependencies for the tests in the ```GenericBlazorWepApi.Tests.csproj```.
+
 ## Basic Usage
 
 It is assumed that you already have done the following steps:
@@ -34,6 +36,8 @@ Following CRUD operations for a specific model are supported:
 #### Get the service going
 
 ```csharp
+using GenericBlazorWebApi.Server
+
 public interface IMyModelService : IGenericService<MyModel, MyGetDto, MyAddDto, MyUpdateDto>  
 {  
 }  
@@ -61,11 +65,13 @@ builder.Services.AddScoped<DbContext, MyDataContext>();
 If you don't want to do that, you can also change the constructor of MyModelService:
 
 ```csharp
+using GenericBlazorWebApi.Server
 
 public class MyModelService : GenericService<MyModel, MyGetDto, MyAddDto, MyUpdateDto>, IMyModelService  
 {  
 	public MyModelService(IMapper mapper, MyDataContext dataContext) : base(mapper, dataContext)  
-    {  
+    {
+
     }
 }
 ```
@@ -73,12 +79,15 @@ public class MyModelService : GenericService<MyModel, MyGetDto, MyAddDto, MyUpda
 #### Inject the service into the generic controller
 
 ```csharp
+using GenericBlazorWebApi.Server
+
 [ApiController]
 [Route("api")] // optional
 public class MyModelController : GenericController<MyModel, MyGetDto, MyAddDto, MyUpdateDto>
 {
     public MyModelController(IMyModelService myModelService) : base(myModelService)
     {
+
     }
 }
 ```
@@ -93,6 +102,8 @@ out the available routes).
 #### Get the service going
 
 ```csharp
+using GenericBlazorWebApi.Client
+
 public interface IMyModelService : IGenericService<MyModel, MyGetDto, MyAddDto, MyUpdateDto>  
 {  
 }  
@@ -100,7 +111,8 @@ public interface IMyModelService : IGenericService<MyModel, MyGetDto, MyAddDto, 
 public class MyModelService : GenericService<MyModel, MyGetDto, MyAddDto, MyUpdateDto>, IMyModelService  
 {  
 	public MyModelService(HttpClient httpClient) : base(httpClient)
-    {  
+    {
+
     }
 }
 ```
@@ -118,10 +130,12 @@ controller from a blazor page with the client service being injected to that pag
 
 ## Advanced usage
 
-Feel free to add additional methods to the MyModelController and to the server MyModelService (don't forget to add the methods
+Feel free to implement additional methods in the MyModelController and in the server MyModelService (don't forget to add the methods
 to the IMyModelService interface):
 
 ```csharp
+using GenericBlazorWebApi.Server
+
 [ApiController]
 [Route("api")]
 public class MyModelController : GenericController<MyModel, MyModelGetDto, MyModelAddDto, MyModelUpdateDto>
@@ -138,7 +152,6 @@ public class MyModelController : GenericController<MyModel, MyModelGetDto, MyMod
         var response = await _service.ChangeSomeCrazyAttribute(id, someCrazyAttribute);
         if (response.Success) return Ok(response);
         return BadRequest(response);
-
     }
 }
 ...
@@ -159,7 +172,7 @@ public class MyModelService : GenericService<MyModel, MyModelGetDto, MyModelAddD
         _mapper = mapper;
     }
     
-    public async Task<ServiceResponse<MyModelGetDto>> ChangeMatrikel(int id, string someCrazyAttribute)
+    public async Task<ServiceResponse<MyModelGetDto>> ChangeSomeCrazyAttribute(int id, string someCrazyAttribute)
     {
         var response = new ServiceResponse<MyModelGetDto>();
         try
